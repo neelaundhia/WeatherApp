@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel;
+using WeatherApp.Model;
 
 namespace WeatherApp.ViewModel
 {
@@ -15,6 +16,31 @@ namespace WeatherApp.ViewModel
                 OnPropertyChanged("Query");
             }
         }
+
+        private CurrentConditions _currentConditions;
+
+        public CurrentConditions CurrentConditions
+        {
+            get { return _currentConditions; }
+            set 
+            { 
+                _currentConditions = value;
+                OnPropertyChanged("CurrentConditions");
+            }
+        }
+
+        private City _selectedCity;
+
+        public City SelectedCity
+        {
+            get { return _selectedCity; }
+            set 
+            { 
+                _selectedCity = value;
+                OnPropertyChanged("SelectedCity");
+            }
+        }
+
 
         public event PropertyChangedEventHandler PropertyChanged;
 
